@@ -22,7 +22,7 @@ jobs:
       - name: Download file
         working-directory: /mnt/workspace
         run: |
-          wget --no-check-certificate --content-disposition "${{ github.event.inputs.download_url }}"
+          wget --tries=0 --no-check-certificate --content-disposition "${{ github.event.inputs.download_url }}"
 
       - name: Get file name
         working-directory: /mnt/workspace
